@@ -1,0 +1,144 @@
+<style>
+body {
+    font-family: "Lato", sans-serif;
+    transition: background-color .5s;
+}
+
+.ui-datepicker {
+   background: #333;
+   border: 1px solid #555;
+   color: #EEE;
+ }
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 10px;
+    font-family: "Courier New";
+}
+
+
+#SV{
+  color:"red";
+  font-size: 50px;
+}
+#bills{
+  font-size:35px;
+  margin-left: 0px;
+}
+#listOfBills{
+  font-size:28px;
+
+}
+
+#medication{
+  font-size:35px;
+}
+#listOfMed{
+  font-size:28px;
+}
+
+#minor{
+  font-size:14px;
+}
+
+#mySidenav{
+  font-family: "Courier New";
+  background-color: #111;
+}
+
+
+body {
+  background: #ccffee;
+  padding-top: 5em;
+  display: flex;
+  justify-content: left;
+  margin: 0px;
+  padding: 0px;
+}
+.boxedBills{
+  border: 5px solid black ;
+  background-color:#F8F8FF;
+}
+.boxedMed{
+  border: 5px solid black;
+  background-color:#F8F8FF;
+}
+.boxedGroceries{
+  border: 5px solid black;
+  background-color:#F8F8FF;
+}
+
+/* DEMO-SPECIFIC STYLES */
+.typewriter h1 {
+  color: blue;
+  font-family: monospace;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation:
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: transparent }
+}
+
+#add{
+  font-size:20px;
+}
+#sort{
+  font-size:20px;
+}
+
+
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>

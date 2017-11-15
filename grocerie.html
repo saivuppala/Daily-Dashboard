@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <title>Groceries</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+
+.addButton {
+  color: blue;
+}
+* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+input[type=text], select, textarea{
+width: 100%;
+padding: 12px;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+resize: vertical;
+}
+
+label {
+padding: 12px 12px 12px 0;
+display: inline-block;
+}
+
+.container {
+border-radius: 5px;
+background-color: #f2f2f2;
+padding: 20px;
+}
+
+.col-25 {
+float: left;
+width: 25%;
+margin-top: 6px;
+}
+
+.col-75 {
+float: left;
+width: 75%;
+margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
+</style>
+  <!--Navigation bar-->
+  <div id="nav-placeholder">
+  </div>
+  <script>
+  $(function(){
+    $("#nav-placeholder").load("navbar.html");
+  });
+  </script>
+  <!--end of Navigation bar-->
+</head>
+<body>
+  <script id="today-template" type="text/x-handlebars-template">
+    <div class="medBox" id = "med{{index}}"><a href="medicine.html">
+      <img height= "30px" width= "30px" align ="right"src="http://www.icon2s.com/wp-content/uploads/2013/07/black-white-metro-edit-icon.png"/>
+    <h3 id = "title">{{title}}</h3>
+      <p>Instructions: {{notes}}</p>
+      <p>Time: {{time}}</p>
+
+    </a>
+    </div>
+
+  </script>
+
+  <script id="future-template" type="text/x-handlebars-template">
+    <div class="medBox" id = "med{{index}}"><a href="medicine.html">
+      <img height= "30px" width= "30px" align ="right"src="http://www.icon2s.com/wp-content/uploads/2013/07/black-white-metro-edit-icon.png"/>
+    <h3 id = "title">{{title}}</h3>
+      <p>Date: {{date}}</p>
+      <!--<p>Instructions: {{notes}}</p>
+      <p>Time: {{time}}</p>-->
+
+    </a>
+    </div>
+
+  </script>
+
+  <div class="listMeds" id="mList">
+    <h2>Today's medicine</h2>
+
+      <!--<div class="boxedMed" id = "item1"><a href="medicine.html">
+        <img height= "30px" width= "30px" align ="right"src="http://www.icon2s.com/wp-content/uploads/2013/07/black-white-metro-edit-icon.png"/>
+      <h3 id = "Med1"> Eye drops</h3>
+        <p>Instructions: 2 drops per eye</p>
+        <p>Time: 3:00pm</p>
+
+      </a>
+    </div>-->
+  </div>
+
+
+  <div class = "listAllMeds" id = "currList">
+    <h2>Currently Taking</h2>
+  </div>
+<button class="addButton" id="addMedsButton">Add New Medication</button>
+<br>
+  <!-- The Modal -->
+<div id="myModal" class="modal">
+
+
+  <!-- Modal content -->
+  <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2>Add New Medication</h2>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+            <span class="close">&times;</span>
+        </div>
+
+        <div class="row">
+          <div class="col-25">
+            <label for="name">Name</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="name" name="medname" placeholder="Medication name..">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-25">
+            <label for="frequency">How often?</label>
+          </div>
+          <div class="col-75">
+            <select id="frequency" name="frequency">
+              <option value="once">Once</option>
+              <option value="daily">Daily</option>
+              <option value="weekly">Weekly</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="date">Date</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="date" name="date" placeholder="What date..?">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="time">Time</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="time" name="time" placeholder="What time?..">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="notes">Medication Instructions</label>
+          </div>
+          <div class="col-75">
+            <textarea id="notes" name="notes" placeholder="Write something.." style="height:100px"></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <button class="addButton" id="addNewMed">Add this medication</button>
+          <button class="cancel" id="cancelAddMed">Cancel</button>
+        </div>
+      </div>
+</body>
+
+</html>
