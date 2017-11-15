@@ -1,23 +1,14 @@
 var numOfItems = 0;
 $(document).ready(function() {
+  numOfItems = localStorage.getItem('numOfItems');
+  console.log(numOfItems);
   if(numOfItems > 0) loadItems();
   $("#addBillsButton").click(openPopup);
   $("#cancelAddBill").click(closePopup);
   $("#addNewBill").click(addMeds);
 })
-var simpleData = {'title': 'Vallia Ice Cream', 'Amount': '1 Gallon', 'date': 'Nov 15, 2017', 'index': 1};
+
 var dataIndex = 0;
-
-var medData = [
-{'title': 'Bananas', 'Amount': '1', 'date': 'N/A', 'index': 1},
-{'title': 'eggs', 'Amount': '1 Dozen', 'date': '11/17/17', 'index': 2},
-{'title': 'Frozen Dumplings', 'Amount': '1','date': '12/30/17', 'index': 3},
-{'title': 'Gyo Don', 'Amount': '1','date': '11/7/17', 'index': 4},
-{'title': 'Milk', 'Amount': '2 Gallon', 'date': '12/1/17', 'index': 5},
-{'title': 'Pizza', 'Amount': '1','date': '11/9/17', 'index': 6}
-]
-
-var userMedData;
 
 function openPopup(){
   // Get the modal
