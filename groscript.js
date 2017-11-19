@@ -1,4 +1,5 @@
 var numOfItems = 0;
+var index = 1;
 $(document).ready(function() {
   numOfItems = localStorage.getItem('numOfItems');
   console.log(numOfItems);
@@ -41,37 +42,44 @@ function closePopup(){
 
 function toggleCheckbox(element, item_id) {
   if (element.checked) {
+    var this_id = $(item_id).parent().attr('id');
+    console.log(item_id + " : " + this_id)
+    var arr = JSON.parse(localStorage.getItem(this_id) );
+    //var userItemData = {'title': name, 'amount': num, 'index': 1};
+    console.log(arr);
     var source = $("#today-template").html();
     var template = Handlebars.compile(source);
-    var html = template(userMedData);
-    var currList = $("#currList");
-    currList.append(html);
-    deleteItem(item_id);
+    var html = template(arr);
+    var pList = $("#pList");
+    pList.append(html);
+
    }
 }
 
 
 function addMeds() {
 //updating bill count
-  numOfItems++;
   localStorage.setItem('numOfItems', numOfItems);
 
     var source = $("#today-template").html();
     var template = Handlebars.compile(source);
 
     var name = document.getElementById('name').value;
-    var num = document.getElementById('time').value;
+    var num = document.getElementById('amount').value;
     //var exp = document.getElementById('date').value;
     //var userMedTime = document.getElementById('time').value;
     //var note = document.getElementById('notes').value;
-    var userItemData = {'title': name, 'time': num, 'index': 1};
-    localStorage.setItem('item' + numOfItems , JSON.stringify(userItemData));
+    var userItemData = {'title': name, 'amount': num, 'index': index};
+    localStorage.setItem('item' + index , JSON.stringify(userItemData));
 
     var html = template(userItemData);
 
     //$("#item1").toggle();
     var todayList = $("#iList");
     todayList.append(html);
+
+    numOfItems++;
+    index++;
   closePopup();
   }
 
@@ -107,7 +115,7 @@ function  loadItems() {
   numOfItems = localStorage.getItem('numOfItems');
   for(i=1;  i <=numOfItems; i++){
     var itemData = JSON.parse(localStorage.getItem('item' + i));
-    var itemDate = itemData['time'];
+    var itemDate = itemData['amount'];
     var itemIndex = itemData['index'];
     //alert("The med num is " + medIndex);
     //TODAY'S MEDICINES
