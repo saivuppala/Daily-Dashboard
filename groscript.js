@@ -1,5 +1,5 @@
 var numOfItems = 0;
-var index = 1;
+var index = 0;
 $(document).ready(function() {
   numOfItems = localStorage.getItem('numOfItems');
   console.log(numOfItems);
