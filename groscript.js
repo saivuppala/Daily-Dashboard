@@ -45,13 +45,13 @@ function toggleCheckbox(element, item_id) {
     var this_id = $(item_id).parent().parent().attr('id');
     console.log(item_id + " : " + this_id)
     var arr = JSON.parse(localStorage.getItem(this_id) );
-    //var userItemData = {'title': name, 'amount': num, 'index': 1};
     console.log(arr);
     var source = $("#today-template").html();
     var template = Handlebars.compile(source);
     var html = template(arr);
     var pList = $("#pList");
     pList.append(html);
+    deleteItem(this_id);
 
    }
 }
