@@ -52,48 +52,9 @@ function toggleCheckbox(element, item_id) {
 
 
 function addMeds() {
-/*
-  console.log("Testing");
-    if(dataIndex<3){
-      //var person = prompt("Bill name:", "Electric bill");
-      var source = $("#today-template").html();
-      var template = Handlebars.compile(source);
-
-      var name = document.getElementById('name').value;
-      var num = document.getElementById('time').value;
-      //var exp = document.getElementById('date').value;
-      //var userMedTime = document.getElementById('time').value;
-      //var note = document.getElementById('notes').value;
-      var userMedData = {'title': name, 'time': num, 'index': 1};
-
-
-      //var html = template(medData[dataIndex]);
-      var html = template(userMedData);
-
-      //$("#item1").toggle();
-      var todayList = $("#mList");
-      todayList.append(html);
-    } else{
-      var source2 = $("#future-template").html();
-      var template = Handlebars.compile(source2);
-
-      var html = template(medData[dataIndex]);
-      var currList = $("#currList");
-      //var box = $("#item1");
-      //list.append(box);
-    }
-  dataIndex++;
-  closePopup();*/
-/*
-  if(cancelled == true){
-      cancelled = false;
-    return;
-  }*/
-
 //updating bill count
   numOfItems++;
   localStorage.setItem('numOfItems', numOfItems);
-
 
     var source = $("#today-template").html();
     var template = Handlebars.compile(source);
