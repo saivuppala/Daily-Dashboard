@@ -42,7 +42,7 @@ function closePopup(){
 
 function toggleCheckbox(element, item_id) {
   if (element.checked) {
-    var this_id = $(item_id).parent().attr('id');
+    var this_id = $(item_id).parent().parent().attr('id');
     console.log(item_id + " : " + this_id)
     var arr = JSON.parse(localStorage.getItem(this_id) );
     //var userItemData = {'title': name, 'amount': num, 'index': 1};
@@ -59,6 +59,8 @@ function toggleCheckbox(element, item_id) {
 
 function addMeds() {
 //updating bill count
+  numOfItems++;
+  index++;
   localStorage.setItem('numOfItems', numOfItems);
 
     var source = $("#today-template").html();
@@ -78,8 +80,7 @@ function addMeds() {
     var todayList = $("#iList");
     todayList.append(html);
 
-    numOfItems++;
-    index++;
+
   closePopup();
   }
 
