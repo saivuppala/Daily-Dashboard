@@ -49,6 +49,7 @@ function loadDashboardData(){
 
   //MEDICINES
   numOfMeds = localStorage.getItem('numOfMeds');
+  console.log("Medicine")
   if(numOfMeds > 0){
     $('#noMeds').hide();
     for(i=1; i<=numOfMeds ; i++){
@@ -89,13 +90,15 @@ function loadDashboardData(){
 
 
   //Groceries
-  numOfGrocs = localStorage.getItem('numOfGrocs');
+  numOfGrocs = localStorage.getItem('numOfItems');
+  console.log('GROCERIES' + numOfGrocs);
   if(numOfGrocs > 0) {
+
     $('#noGroc').hide();
     for(i=1; i<=numOfGrocs ; i++){
-      var grocData = JSON.parse(localStorage.getItem('groc' + i));
-      var grocDate = grocData['date'];
-      var grocIndex = billData['index'];
+      var grocData = JSON.parse(localStorage.getItem('item' + i));
+      //var grocDate = grocData['date'];
+      var grocIndex = grocData['index'];
       //alert("The med num is " + medIndex);
       console.log("The groc num is " + grocIndex);
       //TODAY'S MEDICINES

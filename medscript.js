@@ -3,6 +3,7 @@ var numOfMeds = 0;
 $(document).ready(function() {
   console.log("Local storage length is " + localStorage.length);
   numOfMeds = localStorage.getItem('numOfMeds');
+  console.log("num of meds is " + numOfMeds);
   if(numOfMeds > 0) loadMeds();
   $("#addMedsButton").click(openPopup);
   $("#cancelAddMed").click(closePopup);
