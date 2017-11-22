@@ -165,7 +165,7 @@ function addMeds() {
     currList.append(html);
     //list.append(box);
   }
-  $("#med" + numOfMeds + "notes").hide();
+  //$("#med" + numOfMeds + "notes").hide();
 
 
   //dataIndex++;
