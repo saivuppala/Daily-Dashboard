@@ -96,7 +96,7 @@ function addMeds() {
     var todayList = $("#iList");
     todayList.append(html);
 
-
+    $("#item" + numOfItems + "notes").hide();
   closePopup();
   }
 
@@ -149,4 +149,9 @@ function  loadItems() {
         var todayList = $("#pList");
         todayList.append(html);
   }
+}
+
+function showNotes(div_id){
+  //alert("Bill clicked on " + div_id);
+  $("#" + div_id + "notes").toggle();
 }
