@@ -128,9 +128,9 @@ function addBills() {
 function deleteItem(item_id){
   //alert("Close clicked on " + item_id);
   var med_id = $("#" + item_id).parent().attr('id');
-  var button_id = $("#" + item_id).parent().parent().attr('id');
+  var button_id = $("#" + item_id).parent().parent().parent().attr('id');
   //alert("Close clicked on " + med_id);
-  $("#" + item_id).parent().remove();
+  //$("#" + item_id).parent().remove();
   $("#" + button_id).remove();
   localStorage.removeItem(med_id);
   numOfBills--;
