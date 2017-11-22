@@ -128,16 +128,18 @@ function addBills() {
 function deleteItem(item_id){
   //alert("Close clicked on " + item_id);
   var med_id = $("#" + item_id).parent().attr('id');
-  var button_id = $("#" + item_id).parent().parent().parent().attr('id');
+  var div_id = $("#" + item_id).parent().parent().parent().attr('id');
   //alert("Close clicked on " + med_id);
   //$("#" + item_id).parent().remove();
-  $("#" + button_id).remove();
+  $("#" + div_id).remove();
   localStorage.removeItem(med_id);
   numOfBills--;
   localStorage.setItem('numOfBills', numOfBills);
 }
 
-function showNotes(div_id){
+function showNotes(btn_id){
+
+  var div_id = $("#" + btn_id).children().attr('id');
   //alert("Bill clicked on " + div_id);
   $("#" + div_id + "notes").toggle();
 }
