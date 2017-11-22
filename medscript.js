@@ -165,6 +165,7 @@ function addMeds() {
     currList.append(html);
     //list.append(box);
   }
+  //$("#med" + numOfMeds + "notes").hide();
 
 
   //dataIndex++;
@@ -190,4 +191,9 @@ function editItem(item_id){
   deleteItem(item_id);
   openPopup();
   //NEED TO CHANGE to fill in fields with data
+}
+
+function showNotes(div_id){
+  //alert("Bill clicked on " + div_id);
+  $("#" + div_id + "notes").toggle();
 }

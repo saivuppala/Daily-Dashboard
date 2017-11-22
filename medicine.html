@@ -165,7 +165,7 @@ label {
 
   <span style="font-size:28px;font-family: Courier New; cursor:pointer" onclick="openNav()">&#9776; Menu</span>
     <div class="typewriter">
-      <!-- TIME ----------------------------------------------->
+      
       <script type="text/javascript">
       tday=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
       tmonth=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
@@ -198,11 +198,11 @@ label {
         font-weight: bold;
       }
       </style>
-      <!-- End of Clock --->
+      
   <h1 id="SV">Medications</h1>
 
   <script id="today-template" type="text/x-handlebars-template">
-    <div class="medBox" id = "med{{index}}">
+    <div class="medBox" id = "med{{index}}" onclick = "showNotes(this.id)">
       <img height= "30px" width= "30px" align ="right" id = "edit{{index}}" onclick = "editItem(this.id)" src="http://www.icon2s.com/wp-content/uploads/2013/07/black-white-metro-edit-icon.png"/>
       <span class="closeItem" id="close{{index}}" onclick = "deleteItem(this.id)">&times;</span>
     <h3 id = "title">{{title}}</h3>
@@ -210,7 +210,8 @@ label {
       <p>Date: {{date}}</p>
       <p>Time: {{time}}</p>
       <p>Frequency: {{freq}}</p>
-      <p>Index: {{index}}</p>
+      
+      <p id=med{{index}}notes>Notes: {{notes}}</p>
 
 
     </div>
