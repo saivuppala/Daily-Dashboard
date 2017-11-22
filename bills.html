@@ -210,13 +210,13 @@ label {
   <h1 id="SV">Bills</h1>
 
   <script id="today-template" type="text/x-handlebars-template">
-    <div class="billBox" id = "bill{{index}}">
+    <div class="billBox" id = "bill{{index}}" onclick = "showNotes(this.id)">
        <img height= "30px" width= "30px" align ="right"src="http://www.icon2s.com/wp-content/uploads/2013/07/black-white-metro-edit-icon.png"/>
       <span class="closeItem" id="itemDelete" onclick = "deleteItem(this.id)">&times;</span>
     <h3 id = "title">{{title}}</h3>
       <p>Date: {{date}}</p>
       <p>Amount: {{Amount}}</p>
-      <p>Notes: {{notes}}</p>
+      <p id=bill{{index}}notes>Notes: {{notes}}</p>
 
 
     </div>

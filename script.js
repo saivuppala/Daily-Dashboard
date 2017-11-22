@@ -118,6 +118,7 @@ function addBills() {
     //$("#item1").toggle();
     var todayList = $("#bList");
     todayList.append(html);
+    $("#bill" + numOfBills + "notes").hide();
 
 
 
@@ -132,4 +133,9 @@ function deleteItem(item_id){
   localStorage.removeItem(med_id);
   numOfBills--;
   localStorage.setItem('numOfBills', numOfBills);
+}
+
+function showNotes(div_id){
+  //alert("Bill clicked on " + div_id);
+  $("#" + div_id + "notes").toggle();
 }
