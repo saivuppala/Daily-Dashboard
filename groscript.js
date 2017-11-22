@@ -3,8 +3,9 @@ var numOfBoughts = 0;
 var index = 0;
 $(document).ready(function() {
   numOfItems = localStorage.getItem('numOfItems');
-  console.log(numOfItems);
-  if(numOfItems > 0) loadItems();
+  numOfBoughts = localStorage.getItem('numOfBoughts');
+
+  if(numOfItems > 0 || numOfBoughts > 0) loadItems();
   $("#addBillsButton").click(openPopup);
   $("#cancelAddBill").click(closePopup);
   $("#addNewBill").click(addMeds);
@@ -55,7 +56,7 @@ function toggleCheckbox(element, item_id) {
     pList.append(html);
     deleteThisItem(this_id);
     localStorage.setItem('bought' + index , JSON.stringify(arr));
-    numOfBought++;
+    numOfBoughts++;
     localStorage.setItem('numOfItems', numOfItems);
     localStorage.setItem('numOfBoughts', numOfBoughts);
    }
@@ -103,7 +104,8 @@ function deleteItem(item_id){
   //alert("Close clicked on " + item_id);
   var items_id = $("#" + item_id).parent().attr('id');
   //alert("Close clicked on " + med_id);
-  $("#" + items_id).parent().remove();
+  console.log(items_id);
+  $("#" + items_id).remove();
 
   localStorage.removeItem(items_id);
   numOfItems--;
@@ -130,6 +132,21 @@ function  loadItems() {
         var html = template(itemData);
         //$("#item1").toggle();
         var todayList = $("#iList");
+        todayList.append(html);
+  }
+
+  numOfBoughts = localStorage.getItem('numOfBoughts');
+  for(i=1;  i <=numOfBoughts; i++){
+    var itemData = JSON.parse(localStorage.getItem('bought' + i));
+    var itemDate = itemData['amount'];
+    var itemIndex = itemData['index'];
+    //alert("The med num is " + medIndex);
+    //TODAY'S MEDICINES
+        var source = $("#future-template").html();
+        var template = Handlebars.compile(source);
+        var html = template(itemData);
+        //$("#item1").toggle();
+        var todayList = $("#pList");
         todayList.append(html);
   }
 }
