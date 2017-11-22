@@ -1,4 +1,5 @@
 var numOfItems = 0;
+var numOfBoughts = 0;
 var index = 0;
 $(document).ready(function() {
   numOfItems = localStorage.getItem('numOfItems');
@@ -42,7 +43,8 @@ function closePopup(){
 
 function toggleCheckbox(element, item_id) {
   if (element.checked) {
-    var this_id = $(item_id).parent().parent().attr('id');
+    //var this_id = $(item_id).parent().parent().attr('id');
+    var this_id = $("#" + item_id).parent().parent().attr('id');
     console.log(item_id + " : " + this_id)
     var arr = JSON.parse(localStorage.getItem(this_id) );
     console.log(arr);
@@ -51,11 +53,24 @@ function toggleCheckbox(element, item_id) {
     var html = template(arr);
     var pList = $("#pList");
     pList.append(html);
-    deleteItem(this_id);
-
+    deleteThisItem(this_id);
+    localStorage.setItem('bought' + index , JSON.stringify(arr));
+    numOfBought++;
+    localStorage.setItem('numOfItems', numOfItems);
+    localStorage.setItem('numOfBoughts', numOfBoughts);
    }
 }
 
+function deleteThisItem(item_id){
+  //alert("Close clicked on " + item_id);
+  //var items_id = $("#" + item_id).parent().attr('id');
+  //alert("Close clicked on " + med_id);
+  //console.log(item_id)
+  $("#" + item_id).remove();
+  localStorage.removeItem(item_id);
+  numOfItems--;
+  //localStorage.setItem('numOfMeds', numOfMeds);
+}
 
 function addMeds() {
 //updating bill count
@@ -86,12 +101,12 @@ function addMeds() {
 
 function deleteItem(item_id){
   //alert("Close clicked on " + item_id);
-  var med_id = $("#" + item_id).parent().attr('id');
+  var items_id = $("#" + item_id).parent().attr('id');
   //alert("Close clicked on " + med_id);
-  $("#" + item_id).parent().remove();
+  $("#" + items_id).parent().remove();
 
-  localStorage.removeItem(med_id);
-  //numOfMeds--;
+  localStorage.removeItem(items_id);
+  numOfItems--;
   //localStorage.setItem('numOfMeds', numOfMeds);
 }
 
@@ -100,16 +115,6 @@ function editItem(item_id){
   deleteItem(item_id);
   openPopup();
   //NEED TO CHANGE to fill in fields with data
-}
-
-function delBoxes(){
-    var boxes = document.getElementsByClassName('checkbox');
-    for(var i = 0; i<boxes.length; i++){
-        box = boxes[i];
-        if(box.checked){
-            box.parentNode.removeChild(box);
-        }
-    }
 }
 
 function  loadItems() {
