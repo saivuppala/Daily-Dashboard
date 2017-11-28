@@ -49,7 +49,7 @@ function toggleCheckbox(element, item_id) {
     console.log(item_id + " : " + this_id)
     var arr = JSON.parse(localStorage.getItem(this_id) );
     console.log(arr);
-    var source = $("#today-template").html();
+    var source = $("#future-template").html();
     var template = Handlebars.compile(source);
     var html = template(arr);
     var pList = $("#pList");
@@ -68,9 +68,24 @@ function deleteThisItem(item_id){
   //alert("Close clicked on " + med_id);
   //console.log(item_id)
   $("#" + item_id).remove();
+
   localStorage.removeItem(item_id);
   numOfItems--;
   //localStorage.setItem('numOfMeds', numOfMeds);
+}
+
+function deleteBought(bought_id){
+  var items_id = $("#" + bought_id).parent().attr('id');
+  //alert("Close clicked on " + med_id);
+  console.log(items_id);
+  $("#" + items_id).remove();
+
+  localStorage.removeItem(items_id);
+  console.log(numOfBoughts);
+  numOfBoughts--;
+  console.log(numOfBoughts);
+  localStorage.setItem('numOfBoughts', numOfBoughts);
+
 }
 
 function addMeds() {
@@ -109,7 +124,7 @@ function deleteItem(item_id){
 
   localStorage.removeItem(items_id);
   numOfItems--;
-  //localStorage.setItem('numOfMeds', numOfMeds);
+  localStorage.setItem('numOfItems', numOfItems);
 }
 
 function editItem(item_id){
