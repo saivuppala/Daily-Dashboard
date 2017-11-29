@@ -2,6 +2,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-110385321-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-110385321-1');
+</script>
+
     <link rel="stylesheet" type="text/css" href="freelancer.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <title>Bills</title>
@@ -41,6 +51,7 @@
         overflow: auto; /* Enable scroll if needed */
         background-color: rgb(0,0,0); /* Fallback color */
         background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        border-radius: 25px;
     }
 
     /* Modal Content */
@@ -93,14 +104,14 @@
 
     .closeItem:hover,
     .closeItem:focus {
-        color: white;
+        color: gray;
         text-decoration: none;
         cursor: pointer;
     }
 
     .modal-header {
         padding: 2px 16px;
-        background-color: #5cb85c;
+        background-color: #FFD700;
         color: white;
     }
 
@@ -159,6 +170,7 @@ label {
 </head>
 <body>
 
+
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="index.html">Home</a>
@@ -170,7 +182,7 @@ label {
 </div>
 
 
-  <span style="font-size:28px;font-family: Courier New; cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+  <span style="font-size:28px;font-family: Courier New; cursor:pointer" onclick="openNav()">&#9776;</span>
     <div class="typewriter">
 
       <!--- TIME -->
@@ -212,13 +224,13 @@ label {
 
   <script id="today-template" type="text/x-handlebars-template">
     <div id = "billdiv{{index}}">
-    <button class="w3-button w3-green" id="billbutton{{index}}" onclick = "showNotes(this.id)">
+    <button class="w3-buttonw3-green" id="billbutton{{index}}" onclick = "showNotes(this.id)" border-radius: 10%>
       <div class="billBox" id = "bill{{index}}"  >
       <span class="closeItem" id="itemDelete" onclick = "deleteItem(this.id)">&times;</span>
     <h3 id = "title">{{title}}</h3>
-      <p>Date: {{date}}</p>
-      <p>Amount: ${{Amount}}</p>
-      <p id=bill{{index}}notes>Notes: {{notes}}</p>
+      <p><b>Date:</b> {{date}}</p>
+      <p><b>Amount:</b> ${{Amount}}</p>
+      <p id=bill{{index}}notes><b>Notes:</b> {{notes}}</p>
 
 
     </div>
@@ -228,6 +240,7 @@ label {
 
 
   </script>
+
 
 
   <div class="listBills" id="bList">
