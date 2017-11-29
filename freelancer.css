@@ -1,7 +1,7 @@
 <style>
-
 body {
-    font-family: "Lato", sans-serif;
+    /*font-family: "Lato", sans-serif;*/
+    font-family: 'Roboto Slab';
     transition: background-color .5s;
 }
 .ui-widget-content {
@@ -50,14 +50,15 @@ body {
 #main {
     transition: margin-left .5s;
     padding: 10px;
-    font-family: sans-serif;
+    /*font-family: sans-serif;*/
+    font-family: 'Roboto Slab';
 }
 
 
 #SV{
   color:"red";
   font-size: 50px;
-  font-family: sans-serif;
+  font-family: 'Roboto Slab';
 }
 #bills{
   font-size:35px;
@@ -80,7 +81,8 @@ body {
 }
 
 #mySidenav{
-  font-family: "Courier New";
+  /*font-family: "Courier New";*/
+  font-family: 'Roboto Slab';
   background-color: #111;
 }
 
@@ -112,7 +114,8 @@ body {
 /* DEMO-SPECIFIC STYLES */
 .typewriter h1 {
   color: blue;
-  font-family: sans-serif;
+  /*font-family: sans-serif;*/
+  font-family: 'Roboto Slab';
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   /*border-right: .15em solid orange; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
@@ -123,7 +126,7 @@ body {
     blink-caret .5s step-end infinite;*/
 }
 .titleHeader {
-  background-color:green;
+  background-color:#5cb85c;
   color:white;
   display:flex;
   justify-content:space-between;
@@ -134,7 +137,7 @@ body {
 }
 .titleHeader h1 {
   color: white;
-  font-family: monospace;
+  font-family:'Roboto Slab';
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   /*border-right: .15em solid orange; /* The typwriter cursor */
 
@@ -178,5 +181,21 @@ body {
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
+}
+
+h1 {
+  font-family: 'Roboto Slab';
+}
+h2 {
+  font-family: 'Roboto Slab';
+}
+label {
+  font-family: 'Roboto Slab';
+}
+button {
+  font-family: 'Roboto Slab';
+}
+input {
+  font-family: 'Roboto Slab';
 }
 </style>
