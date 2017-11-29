@@ -80,6 +80,9 @@ function  loadBills() {
         //$("#item1").toggle();
         var todayList = $("#bList");
         todayList.append(html);
+        $("#bill" + i + "notes").hide();
+
+
 
       //CURRENTLY TAKING
 
@@ -118,6 +121,7 @@ function addBills() {
     //$("#item1").toggle();
     var todayList = $("#bList");
     todayList.append(html);
+    console.log("#bill" + numOfBills + "notes");
     $("#bill" + numOfBills + "notes").hide();
 
 

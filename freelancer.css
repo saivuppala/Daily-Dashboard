@@ -1,4 +1,5 @@
 <style>
+
 body {
     font-family: "Lato", sans-serif;
     transition: background-color .5s;
@@ -46,13 +47,14 @@ body {
 #main {
     transition: margin-left .5s;
     padding: 10px;
-    font-family: "Courier New";
+    font-family: sans-serif;
 }
 
 
 #SV{
   color:"red";
   font-size: 50px;
+  font-family: sans-serif;
 }
 #bills{
   font-size:35px;
@@ -89,15 +91,15 @@ body {
   padding: 0px;
 }
 .boxedBills{
-  border: 5px solid black ;
+  border: 5px solid grey ;
   background-color:#F8F8FF;
 }
 .boxedMed{
-  border: 5px solid black;
+  border: 5px solid grey;
   background-color:#F8F8FF;
 }
 .boxedGroceries{
-  border: 5px solid black;
+  border: 5px solid grey;
   background-color:#F8F8FF;
 }
 
@@ -106,7 +108,7 @@ body {
 /* DEMO-SPECIFIC STYLES */
 .typewriter h1 {
   color: blue;
-  font-family: monospace;
+  font-family: sans-serif;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   /*border-right: .15em solid orange; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
@@ -136,7 +138,8 @@ body {
   font-size:20px;
 }
 
-.w3-buttonw3-green {border-radius: 25px; background-color: "white"; width: 100%;} 
+.w3-buttonw3-green {border-radius: 25px; background-color: white; width: 100%; border-color: transparent; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
 
 
 

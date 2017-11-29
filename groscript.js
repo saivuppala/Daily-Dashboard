@@ -148,6 +148,8 @@ function  loadItems() {
         //$("#item1").toggle();
         var todayList = $("#iList");
         todayList.append(html);
+        $("#item" + i + "notes").hide();
+
   }
 
   numOfBoughts = localStorage.getItem('numOfBoughts');

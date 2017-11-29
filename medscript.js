@@ -97,6 +97,8 @@ function  loadMeds() {
         //$("#item1").toggle();
         var todayList = $("#mList");
         todayList.append(html);
+        $("#med" + i + "notes").hide();
+
       }
       //CURRENTLY TAKING
       else{
