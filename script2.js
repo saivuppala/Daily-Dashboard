@@ -142,4 +142,6 @@ function showNotes(btn_id){
   var div_id = $("#" + btn_id).children().attr('id');
   //alert("Bill clicked on " + div_id);
   $("#" + div_id + "notes").toggle();
+  tracker = ga.getAll()[0];
+  tracker.send('event', 'button', 'click');
 }
