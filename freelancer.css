@@ -3,12 +3,15 @@ body {
     font-family: "Lato", sans-serif;
     transition: background-color .5s;
 }
-
+.ui-widget-content {
+  background: #AAAAAA;
+}
+/*
 .ui-datepicker {
    background: #333;
    border: 1px solid #555;
    color: #EEE;
- }
+ }*/
 .sidenav {
     height: 100%;
     width: 0;
@@ -81,9 +84,10 @@ body {
 
 
 body {
-  background: #F8F8FF;
+  /*background: #F8F8FF;*/
+  background: #AAAAAA;
   padding-top: 5em;
-  display: flex;
+  /*display: flex;*/
   justify-content: left;
   margin: 0px;
   padding: 0px;
@@ -114,6 +118,33 @@ body {
     typing 3.5s steps(30, end),
     blink-caret .5s step-end infinite;*/
 }
+.titleHeader {
+  background-color:green;
+  color:white;
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+}
+
+.typewriter span {
+}
+.titleHeader h1 {
+  color: white;
+  font-family: monospace;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  /*border-right: .15em solid orange; /* The typwriter cursor */
+
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  /*animation:
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;*/
+  justify-content: center;
+  text-align: center;
+}
+
+
+
 
 /* The typing effect */
 @keyframes typing {
