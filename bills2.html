@@ -51,6 +51,7 @@
         overflow: auto; /* Enable scroll if needed */
         background-color: rgb(0,0,0); /* Fallback color */
         background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        border-radius: 25px;
     }
 
     /* Modal Content */
@@ -168,7 +169,7 @@ label {
 
 </head>
 <body>
- 
+
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -223,13 +224,13 @@ label {
 
   <script id="today-template" type="text/x-handlebars-template">
     <div id = "billdiv{{index}}">
-    <button class="w3-button w3-green" id="billbutton{{index}}" onclick = "showNotes(this.id)" border-radius: 10%>
+    <button class="w3-buttonw3-green" id="billbutton{{index}}" onclick = "showNotes(this.id)" border-radius: 10%>
       <div class="billBox" id = "bill{{index}}"  >
       <span class="closeItem" id="itemDelete" onclick = "deleteItem(this.id)">&times;</span>
     <h3 id = "title">{{title}}</h3>
-      <p>Date: {{date}}</p>
-      <p>Amount: ${{Amount}}</p>
-      <p id=bill{{index}}notes>Notes: {{notes}}</p>
+      <p><b>Date:</b> {{date}}</p>
+      <p><b>Amount:</b> ${{Amount}}</p>
+      <p id=bill{{index}}notes><b>Notes:</b> {{notes}}</p>
 
 
     </div>
@@ -239,6 +240,7 @@ label {
 
 
   </script>
+
 
 
   <div class="listBills" id="bList">

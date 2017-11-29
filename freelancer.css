@@ -136,7 +136,7 @@ body {
   font-size:20px;
 }
 
-.w3-buttonw3-green {border-radius: 20%; background-color: green}
+.w3-buttonw3-green {border-radius: 25px; background-color: "white"; width: 100%;} 
 
 
 
