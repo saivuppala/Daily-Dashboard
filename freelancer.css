@@ -101,6 +101,8 @@ body {
   background-color:#F8F8FF;
 }
 
+
+
 /* DEMO-SPECIFIC STYLES */
 .typewriter h1 {
   color: blue;
@@ -133,6 +135,8 @@ body {
 #sort{
   font-size:20px;
 }
+
+.w3-buttonw3-green {border-radius: 20%; background-color: green}
 
 
 
