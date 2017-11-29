@@ -137,5 +137,8 @@ function deleteItem(item_id){
 
 function showNotes(div_id){
   //alert("Bill clicked on " + div_id);
+  console.log("Notes clicked");
   $("#" + div_id + "notes").toggle();
+  tracker = ga.getAll()[0];
+  tracker.send('event', 'button', 'click');
 }
