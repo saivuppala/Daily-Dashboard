@@ -217,6 +217,18 @@ body {
 .grocButton {border-radius: 25px; background-color: #12a24a; width: 100%; border-color: transparent; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
+i {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
 
 
 
@@ -241,3 +253,4 @@ input {
   font-family: 'Roboto Slab';
 }
 </style>
+
