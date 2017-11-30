@@ -63,21 +63,27 @@ body {
 #bills{
   font-size:35px;
   margin-left: 0px;
+  font-family: 'Roboto Slab';
+
 }
 #listOfBills{
-  font-size:28px;
+  font-size:32px;
+  font-family: 'Roboto Slab';
 
 }
 
 #medication{
   font-size:35px;
+  font-family: 'Roboto Slab';
 }
 #listOfMed{
-  font-size:28px;
+  font-size:32px;
+  font-family: 'Roboto Slab';
 }
 
 #minor{
   font-size:14px;
+  font-family: 'Roboto Slab';
 }
 
 #mySidenav{
@@ -89,7 +95,8 @@ body {
 
 body {
   /*background: #F8F8FF;*/
-  background: #AAAAAA;
+  /*background: #AAAAAA;*/
+  background: #f7faff;
   padding-top: 5em;
   /*display: flex;*/
   justify-content: left;
@@ -97,17 +104,29 @@ body {
   padding: 0px;
 }
 .boxedBills{
-  border: 5px solid grey ;
-  background-color:#F8F8FF;
+
+  /*background-color:#F8F8FF;*/
+  font-family: 'Roboto Slab';
+  color: white;
+  font-size:25px;
 }
 .boxedMed{
-  border: 5px solid grey;
-  background-color:#F8F8FF;
+
+  /*background-color:#F8F8FF;*/
+  font-family: 'Roboto Slab';
+    font-color: white;
+    font-size:25px;
+    color: white
 }
 .boxedGroceries{
-  border: 5px solid grey;
-  background-color:#F8F8FF;
+
+  /*background-color:#F8F8FF;*/
+  font-family: 'Roboto Slab';
+    color: white;
+    font-size:25px;
 }
+
+
 
 
 
@@ -173,6 +192,15 @@ body {
 }
 
 .w3-buttonw3-green {border-radius: 25px; background-color: white; width: 100%; border-color: transparent; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.billsButton {border-radius: 25px; background-color:#ffaa00; width: 100%; border-color: transparent; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.medButton {border-radius: 25px; background-color: #2849d8; width: 100%; border-color: transparent; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.grocButton {border-radius: 25px; background-color: #12a24a; width: 100%; border-color: transparent; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 

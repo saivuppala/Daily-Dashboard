@@ -10,6 +10,7 @@
 
   gtag('config', 'UA-110385321-1');
 </script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="freelancer.css">
     <title>Daily Dashboard</title>
@@ -69,33 +70,42 @@
       <!--- END OF TIME --->
   <h1 id="SV">Daily Dashboard</h1>
 
-  <div class="boxedBills" id = "billBox"><a href="bills.html">
+  <button class="billsButton" border-radius: 10% onclick="location.href='bills.html'">
+  <div class="boxedBills" id = "billBox" >
   <h3 id = "bills">Bills</h3>
     <p id="noBills">No upcoming bills</p>
     <!--<p id="listOfBills">Rent: 11/07/2017</p>
     <p id="listOfBills">Credit Card Bills: 11/15/2017</p>
     <p id="listOfBills">Auto Bills: 11/20/2017</p>-->
 
-  </a>
-  </div>
 
-  <div class="boxedMed" id = "medBox"><a href="medicine.html">
+
+  </div>
+    </button>
+    <br><br>
+
+    <button class="medButton" border-radius: 10% onclick ="location.href='medicine.html'">
+  <div class="boxedMed" id = "medBox" >
   <h3 id = "medication"> Medications</h3>
     <p id="noMeds">No medications today</p>
     <!--<p id="listOfMed">Eye Drops:   5:00pm</p>
     <p id="listOfMed">Insulin:     6:00pm</p>
     <p id="listOfMed">Vitamins:    7:00pm</p>-->
-  </a>
-  </div>
 
-   <div class="boxedGroceries" id = "grocBox"><a href="groceries.html">
-  <h3 id = "bills">Groceries</h3>
+  </div>
+</button>
+<br><br>
+
+<button class="grocButton" border-radius: 10% onclick="location.href='groceries.html'">
+   <div class="boxedGroceries" id = "grocBox" >
+  <h3 id = "groceries">Groceries</h3>
     <p id="noGroc">No groceries in your list</p>
   <!--  <p id="listOfBills">Apples</p>
     <p id="listOfBills">Carrots</p>
     <p id="listOfBills">Bananas</p>-->
-  </a>
+
   </div>
+</button>
 
   <script id="bill-template" type="text/x-handlebars-template">
     <p>{{title}} : {{date}} </p>
