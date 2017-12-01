@@ -186,7 +186,7 @@ label {
 </div>
 
 
-  
+
     <div class="typewriter">
 
       <!--- TIME -->
@@ -224,12 +224,13 @@ label {
       </style>
 
 
-  
+
 
   <script id="today-template" type="text/x-handlebars-template">
     <div id = "billdiv{{index}}">
     <button class="w3-buttonw3-green" id="billbutton{{index}}" onclick = "showNotes(this.id)" border-radius: 10%>
       <div class="billBox" id = "bill{{index}}"  >
+
       <span class="closeItem" id="itemDelete" onclick = "deleteItem(this.id)">&times;</span>
     <h3 id = "title">{{title}}</h3>
       <p><b>Date:</b> {{date}}</p>
@@ -238,6 +239,10 @@ label {
 
 
     </div>
+    <p> <i class="arrow down" id = "dArrow"></i></p>
+    <p> <i class="arrow up" id = "uArrow"></i></p>
+
+
   </button>
   <br><br>
 </div>
@@ -303,7 +308,6 @@ label {
         </div>
         <div class="row">
           <button class="addButton" id="addNewBill">Add this Bill</button>
-          <p> <i class="arrow down"></i></p>
           <button class="cancel" id="cancelAddBill">Cancel</button>
         </div>
       </div>
