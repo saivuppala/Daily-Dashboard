@@ -48,7 +48,7 @@ function loadDashboardData(){
 
 
   //MEDICINES
-  numOfMeds = localStorage.getItem('numOfMeds');
+  numOfMeds = localStorage.getItem('numOfTodayMeds');
   console.log("Medicine")
   if(numOfMeds > 0){
     $('#noMeds').hide();

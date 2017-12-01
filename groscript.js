@@ -4,6 +4,7 @@ var index = 0;
 $(document).ready(function() {
   numOfItems = localStorage.getItem('numOfItems');
   numOfBoughts = localStorage.getItem('numOfBoughts');
+  index = localStorage.getItem('grocIndex');
 
   if(numOfItems > 0 || numOfBoughts > 0) loadItems();
   $("#addBillsButton").click(openPopup);
@@ -92,6 +93,7 @@ function addMeds() {
 //updating bill count
   numOfItems++;
   index++;
+  localStorage.setItem('grocIndex', index);
   localStorage.setItem('numOfItems', numOfItems);
 
     var source = $("#today-template").html();
