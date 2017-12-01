@@ -159,16 +159,32 @@ body {
   background-color: #000000;
   color:white;
   display:flex;
-
   justify-content:space-between;
   align-items:baseline;
 }
 
 
 
+
+
+
 .typewriter span {
 }
 .titleHeader h1 {
+  color: white;
+  font-family:'Roboto Slab';
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  /*border-right: .15em solid orange; /* The typwriter cursor */
+
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  /*animation:
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;*/
+  justify-content: center;
+  text-align: center;
+}
+.indexHeader h1 {
   color: white;
   font-family:'Roboto Slab';
   overflow: hidden; /* Ensures the content is not revealed until the animation */
