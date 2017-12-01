@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $("#noBills").hide();
+  $("#noBills").show();
   if(localStorage.length > 0) loadBills();
   $("#addBillsButton").click(openPopup);
   $("#cancelAddBill").click(closePopup);
@@ -68,7 +68,7 @@ $('#addNewBill').click(function(){
 function  loadBills() {
   numOfBills = localStorage.getItem('numOfBills');
   index = localStorage.getItem('billIndex');
-  if(numOfBills == 0) $("#noBills").show();
+  if(numOfBills != 0) $("#noBills").hide();
   for(i=index-numOfBills+1; i<=index; i++){
     var medData = JSON.parse(localStorage.getItem('bill' + i));
     var medDate = medData['date'];

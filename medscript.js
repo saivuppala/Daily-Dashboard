@@ -11,7 +11,7 @@ $(document).ready(function() {
   $("#addMedsButton").click(openPopup);
   $("#cancelAddMed").click(closePopup);
   $("#addNewMed").click(addMeds);
-  $("#noMeds").hide();
+  $("#noMeds").show();
 
 })
 var simpleData = {'title': 'Eye drops', 'notes': '2 drops per eye', 'time': '3:00pm', 'index': 1};
@@ -84,7 +84,7 @@ $('#addNewMed').click(function(){
 //Loads meds from localStorage
 function  loadMeds() {
   var medIndex = 0;
-  if(numOfMeds == 0)  $("#noMeds").show();
+  if(numOfMeds != 0)  $("#noMeds").hide();
   console.log("Num meds" + numOfMeds);
 
 
