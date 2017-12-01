@@ -17,6 +17,8 @@ var billsData = [
 {'title': 'Medical Bills', 'Amount': '2000','date': '11/9/17', 'index': 6}
 ]
 
+var showingNotes = false;
+
 function openPopup(){
   // Get the modal
   var modal = document.getElementById('myModal');
@@ -85,6 +87,8 @@ function  loadBills() {
         var todayList = $("#bList");
         todayList.append(html);
         $("#bill" + i + "notes").hide();
+        $("#bill" + i + "dArrow").show();
+        $("#bill" + i + "uArrow").hide();
 
 
 
@@ -100,13 +104,13 @@ function addBills() {
     return;
   }
   console.log("Testing");
+  $("#noBills").hide();
 
 //updating bill count
   numOfBills++;
   index++;
   localStorage.setItem('numOfBills', numOfBills);
   localStorage.setItem('billIndex', index);
-  $("#noBills").hide();
 
 
   //if(numOfBills<3){
@@ -130,6 +134,8 @@ function addBills() {
     todayList.append(html);
     console.log("#bill" + index + "notes");
     $("#bill" + index + "notes").hide();
+    $("#bill" + index + "dArrow").show();
+    $("#bill" + index + "uArrow").hide();
 
 
 
@@ -147,13 +153,25 @@ function deleteItem(item_id){
   numOfBills--;
   localStorage.setItem('numOfBills', numOfBills);
   if(numOfBills == 0) $("#noBills").show();
+
 }
 
 function showNotes(btn_id){
+  showingNotes = !showingNotes;
 
   var div_id = $("#" + btn_id).children().attr('id');
   //alert("Bill clicked on " + div_id);
   $("#" + div_id + "notes").toggle();
+  /*if(showingNotes){
+    $("#" + div_id + "dArrow").hide();
+    $("#" + div_id + "uArrow").show();
+  }
+  else {
+    $("#" + div_id + "dArrow").show();
+    $("#" + div_id + "uArrow").hide();
+  }*/
+  $("#" + div_id + "dArrow").toggle();
+  $("#" + div_id + "uArrow").toggle();
   tracker = ga.getAll()[0];
   tracker.send('event', 'button', 'click');
 }

@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  $("#noBills").show();
   if(localStorage.length > 0) loadBills();
   $("#addBillsButton").click(openPopup);
   $("#cancelAddBill").click(closePopup);
@@ -7,7 +6,6 @@ $(document).ready(function() {
 })
 var simpleData = {'title': 'Rent', 'Amount': '$2000', 'date': 'Nov 15, 2017', 'index': 1};
 var numOfBills = 0;
-var index = 0;
 var billsData = [
 {'title': 'Rent', 'Amount': '2000', 'date': '11/6/17', 'index': 1},
 {'title': 'Car', 'Amount': '2000', 'date': '11/6/17', 'index': 2},
@@ -16,8 +14,6 @@ var billsData = [
 {'title': 'Credit Card', 'Amount': '2000', 'date': '11/8/17', 'index': 5},
 {'title': 'Medical Bills', 'Amount': '2000','date': '11/9/17', 'index': 6}
 ]
-
-var showingNotes = false;
 
 function openPopup(){
   // Get the modal
@@ -67,9 +63,7 @@ $('#addNewBill').click(function(){
 
 function  loadBills() {
   numOfBills = localStorage.getItem('numOfBills');
-  index = localStorage.getItem('billIndex');
-  if(numOfBills != 0) $("#noBills").hide();
-  for(i=index-numOfBills+1; i<=index; i++){
+  for(i=1; i<=numOfBills; i++){
     var medData = JSON.parse(localStorage.getItem('bill' + i));
     var medDate = medData['date'];
     var billIndex = medData['index'];
@@ -86,11 +80,6 @@ function  loadBills() {
         //$("#item1").toggle();
         var todayList = $("#bList");
         todayList.append(html);
-        $("#bill" + i + "notes").hide();
-        $("#bill" + i + "dArrow").show();
-        $("#bill" + i + "uArrow").hide();
-
-
 
       //CURRENTLY TAKING
 
@@ -104,13 +93,10 @@ function addBills() {
     return;
   }
   console.log("Testing");
-  $("#noBills").hide();
 
 //updating bill count
   numOfBills++;
-  index++;
   localStorage.setItem('numOfBills', numOfBills);
-  localStorage.setItem('billIndex', index);
 
 
   //if(numOfBills<3){
@@ -123,19 +109,16 @@ function addBills() {
     var userBillAmount = document.getElementById('amount').value;
     var userBillNotes = document.getElementById('notes').value;
     //var numOfBills = 1;
-    var userBillData = {'title': userBillName, 'Amount': userBillAmount, 'date': userBillDate, 'notes': userBillNotes, 'index': index};
+    var userBillData = {'title': userBillName, 'Amount': userBillAmount, 'date': userBillDate, 'notes': userBillNotes, 'index': numOfBills};
 
-    localStorage.setItem('bill' + index , JSON.stringify(userBillData));
+    localStorage.setItem('bill' + numOfBills , JSON.stringify(userBillData));
 
     var html = template(userBillData);
 
     //$("#item1").toggle();
     var todayList = $("#bList");
     todayList.append(html);
-    console.log("#bill" + index + "notes");
-    $("#bill" + index + "notes").hide();
-    $("#bill" + index + "dArrow").show();
-    $("#bill" + index + "uArrow").hide();
+    $("#bill" + numOfBills + "notes").hide();
 
 
 
@@ -145,33 +128,17 @@ function addBills() {
 function deleteItem(item_id){
   //alert("Close clicked on " + item_id);
   var med_id = $("#" + item_id).parent().attr('id');
-  var div_id = $("#" + item_id).parent().parent().parent().attr('id');
   //alert("Close clicked on " + med_id);
-  //$("#" + item_id).parent().remove();
-  $("#" + div_id).remove();
+  $("#" + item_id).parent().remove();
   localStorage.removeItem(med_id);
   numOfBills--;
   localStorage.setItem('numOfBills', numOfBills);
-  if(numOfBills == 0) $("#noBills").show();
-
 }
 
-function showNotes(btn_id){
-  showingNotes = !showingNotes;
-
-  var div_id = $("#" + btn_id).children().attr('id');
+function showNotes(div_id){
   //alert("Bill clicked on " + div_id);
+  console.log("Notes clicked");
   $("#" + div_id + "notes").toggle();
-  /*if(showingNotes){
-    $("#" + div_id + "dArrow").hide();
-    $("#" + div_id + "uArrow").show();
-  }
-  else {
-    $("#" + div_id + "dArrow").show();
-    $("#" + div_id + "uArrow").hide();
-  }*/
-  $("#" + div_id + "dArrow").toggle();
-  $("#" + div_id + "uArrow").toggle();
   tracker = ga.getAll()[0];
   tracker.send('event', 'button', 'click');
 }
