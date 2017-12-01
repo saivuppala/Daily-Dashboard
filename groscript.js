@@ -142,7 +142,7 @@ function editItem(item_id){
 
 function  loadItems() {
   numOfItems = localStorage.getItem('numOfItems');
-  for(i=1;  i <=numOfItems; i++){
+  for(i=index-numOfItems+1; i<=index; i++){
     var itemData = JSON.parse(localStorage.getItem('item' + i));
     var itemDate = itemData['amount'];
     var itemIndex = itemData['index'];

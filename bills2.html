@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-110385321-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110385321-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'UA-110385321-1');
-</script>
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
 
-    <link rel="stylesheet" type="text/css" href="freelancer.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <title>Bills</title>
+    gtag('config', 'UA-110385321-1');
+  </script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="freelancer.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <title>Bills</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
-     <meta charset="utf-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>jQuery UI Datepicker - Default functionality</title>
 
@@ -26,209 +30,249 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
-  $( function() {
-    $( "#date" ).datepicker();
-  } );
+    $(function() {
+      $("#date").datepicker();
+    });
   </script>
 
 
-    <style>
-
+  <style>
     .addButton {
       color: #ffaa00;
     }
-    * The Modal (background) */
-    .modal {
-        display: none; /* Hidden by default */
-        position: fixed; /* Stay in place */
-        z-index: 1; /* Sit on top */
-        padding-top: 100px; /* Location of the box */
-        left: 0;
-        top: 0;
-        width: 100%; /* Full width */
-        height: 100%; /* Full height */
-        overflow: auto; /* Enable scroll if needed */
-        background-color: rgb(0,0,0); /* Fallback color */
-        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-        border-radius: 25px;
+
+    * The Modal (background) */ .modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 1;
+      /* Sit on top */
+      padding-top: 100px;
+      /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: rgb(0, 0, 0);
+      /* Fallback color */
+      background-color: rgba(0, 0, 0, 0.4);
+      /* Black w/ opacity */
+      border-radius: 25px;
     }
 
     /* Modal Content */
+
     .modal-content {
-        position: relative;
-        background-color: #fefefe;
-        margin: auto;
-        padding: 0;
-        border: 1px solid #888;
-        width: 100%;
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-        -webkit-animation-name: animatetop;
-        -webkit-animation-duration: 0.4s;
-        animation-name: animatetop;
-        animation-duration: 0.4s
+      position: relative;
+      background-color: #fefefe;
+      margin: auto;
+      padding: 0;
+      border: 1px solid #888;
+      width: 100%;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      -webkit-animation-name: animatetop;
+      -webkit-animation-duration: 0.4s;
+      animation-name: animatetop;
+      animation-duration: 0.4s
     }
 
     /* Add Animation */
+
     @-webkit-keyframes animatetop {
-        from {top:-300px; opacity:0}
-        to {top:0; opacity:1}
+      from {
+        top: -300px;
+        opacity: 0
+      }
+      to {
+        top: 0;
+        opacity: 1
+      }
     }
 
     @keyframes animatetop {
-        from {top:-300px; opacity:0}
-        to {top:0; opacity:1}
+      from {
+        top: -300px;
+        opacity: 0
+      }
+      to {
+        top: 0;
+        opacity: 1
+      }
     }
 
     /* The Close Button */
+
     .close {
-        color: white;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
+      color: white;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
     }
 
     .close:hover,
     .close:focus {
-        color: #000;
-        text-decoration: none;
-        cursor: pointer;
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
     }
 
     .closeItem {
-        color: #000;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
+      color: #000;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
     }
 
     .closeItem:hover,
     .closeItem:focus {
-        color: gray;
-        text-decoration: none;
-        cursor: pointer;
+      color: gray;
+      text-decoration: none;
+      cursor: pointer;
     }
 
     .modal-header {
-        padding: 2px 16px;
-        background-color: #ffaa00;
-        color: white;
+      padding: 2px 16px;
+      background-color: #ffaa00;
+      color: white;
     }
 
-    .modal-body {padding: 2px 16px;}
+    .modal-body {
+      padding: 2px 16px;
+    }
 
     .modal-footer {
-        padding: 2px 16px;
-        background-color: #5cb85c;
-        color: white;
+      padding: 2px 16px;
+      background-color: #5cb85c;
+      color: white;
     }
 
-input[type=text], select, textarea{
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    resize: vertical;
-}
+    input[type=text],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      resize: vertical;
+    }
 
-label {
-    padding: 12px 12px 12px 0;
-    display: inline-block;
-}
+    label {
+      padding: 12px 12px 12px 0;
+      display: inline-block;
+    }
 
-.container {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-}
+    .container {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
 
-.col-25 {
-    float: left;
-    width: 25%;
-    margin-top: 6px;
-}
+    .col-25 {
+      float: left;
+      width: 25%;
+      margin-top: 6px;
+    }
 
-.col-75 {
-    float: left;
-    width: 75%;
-    margin-top: 6px;
-}
+    .col-75 {
+      float: left;
+      width: 75%;
+      margin-top: 6px;
+    }
 
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
+    /* Clear floats after the columns */
 
-
-</style>
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  </style>
 
 
 
 </head>
+
 <body>
 
 
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="index.html">Home</a>
-  <a href="bills.html">Bills</a>
-  <a href="medicine.html">Medications</a>
-  <a href="groceries.html">Groceries</a>
-  <!--<a href="Tasks.html">Tasks</a>
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="index.html">Home</a>
+    <a href="bills.html">Bills</a>
+    <a href="medicine.html">Medications</a>
+    <a href="groceries.html">Groceries</a>
+    <!--<a href="Tasks.html">Tasks</a>
   <a href="Notes.html">Notes</a>-->
-</div>
+  </div>
 
-<div class="titleHeader">
-  <span style="font-size:28px;font-family:Roboto Slab;;display:inline;block-size:1px;cursor:pointer;" onclick="openNav()">&#9776;</span>
-  <h1 id="SV">Bills</h1>
-</div>
+  <div class="titleHeader">
+    <span style="font-size:28px;font-family:Roboto Slab;;display:inline;block-size:1px;cursor:pointer;" onclick="openNav()">&#9776;</span>
+    <h1 id="SV">Bills</h1>
+  </div>
 
 
 
-    <div class="typewriter">
+  <div class="typewriter">
 
-      <!--- TIME -->
-      <script type="text/javascript">
-      tday=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
-      tmonth=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+    <!--- TIME -->
+    <script type="text/javascript">
+      tday = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
+      tmonth = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
 
-      function GetClock(){
-      var d=new Date();
-      var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getFullYear();
-      var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds(),ap;
+      function GetClock() {
+        var d = new Date();
+        var nday = d.getDay(),
+          nmonth = d.getMonth(),
+          ndate = d.getDate(),
+          nyear = d.getFullYear();
+        var nhour = d.getHours(),
+          nmin = d.getMinutes(),
+          nsec = d.getSeconds(),
+          ap;
 
-      if(nhour==0){ap=" AM";nhour=12;}
-      else if(nhour<12){ap=" AM";}
-      else if(nhour==12){ap=" PM";}
-      else if(nhour>12){ap=" PM";nhour-=12;}
+        if (nhour == 0) {
+          ap = " AM";
+          nhour = 12;
+        } else if (nhour < 12) {
+          ap = " AM";
+        } else if (nhour == 12) {
+          ap = " PM";
+        } else if (nhour > 12) {
+          ap = " PM";
+          nhour -= 12;
+        }
 
-      if(nmin<=9) nmin="0"+nmin;
-      if(nsec<=9) nsec="0"+nsec;
+        if (nmin <= 9) nmin = "0" + nmin;
+        if (nsec <= 9) nsec = "0" + nsec;
 
-      document.getElementById('clockbox').innerHTML=""+tday[nday]+", "+(nmonth+1) +"/"+ndate+"/"+nyear+" "+nhour+":"+nmin+ap+"";
+        document.getElementById('clockbox').innerHTML = "" + tday[nday] + ", " + (nmonth + 1) + "/" + ndate + "/" + nyear + " " + nhour + ":" + nmin + ap + "";
       }
 
-      window.onload=function(){
-      GetClock();
-      setInterval(GetClock,1000);
+      window.onload = function() {
+        GetClock();
+        setInterval(GetClock, 1000);
       }
-      </script>
-      <div id="clockbox"></div>
-      <style>
-      #clockbox{
-        font-size : 30px;
+    </script>
+    <div id="clockbox"></div>
+    <style>
+      #clockbox {
+        font-size: 30px;
         font-weight: bold;
       }
-      </style>
+    </style>
 
 
 
 
-  <script id="today-template" type="text/x-handlebars-template">
-    <div id = "billdiv{{index}}">
-    <button class="w3-buttonw3-green" id="billbutton{{index}}" onclick = "showNotes(this.id)" border-radius: 10%>
+    <script id="today-template" type="text/x-handlebars-template">
+      <div id="billdiv{{index}}">
+        <button class="w3-buttonw3-green" id="billbutton{{index}}" onclick="showNotes(this.id)" border-radius: 10%>
       <div class="billBox" id = "bill{{index}}"  >
 
       <span class="closeItem" id="itemDelete" onclick = "deleteItem(this.id)">&times;</span>
@@ -239,97 +283,99 @@ label {
 
 
     </div>
-    <p> <i class="arrow down" id = "dArrow"></i></p>
-    <p> <i class="arrow up" id = "uArrow"></i></p>
+    <p id = "bill{{index}}dArrow"> <i class="arrow down" ></i></p>
+    <p id = "bill{{index}}uArrow"> <i class="arrow up" ></i></p>
 
 
   </button>
-  <br><br>
-</div>
-
-
-  </script>
-
-
-
-  <div class="listBills" id="bList">
-    <h2>Upcoming Bills</h2>
-
-  </div>
-
-<button class="addButton" id="addBillsButton">Add New Bill</button>
-<br>
-  <!-- The Modal -->
-<div id="myModal" class="modal">
-
-
-  <!-- Modal content -->
-  <div class="modal-content">
-      <div class="modal-header">
-        <span class="close">&times;</span>
-        <h2>Add New Bill</h2>
+        <br><br>
       </div>
-      <div class="modal-body">
-        <div class="row">
+
+
+    </script>
+
+
+
+    <div class="listBills" id="bList">
+      <h2>Upcoming Bills</h2>
+
+    </div>
+
+    <button class="addButton" id="addBillsButton">Add New Bill</button>
+    <br>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>Add New Bill</h2>
+        </div>
+        <div class="modal-body">
+          <div class="row">
             <span class="close">&times;</span>
-        </div>
+          </div>
 
-        <div class="row">
-          <div class="col-25">
-            <label for="name">Name</label>
+          <div class="row">
+            <div class="col-25">
+              <label for="name">Name</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="name" name="medname" placeholder="Bill..">
+            </div>
           </div>
-          <div class="col-75">
-            <input type="text" id="name" name="medname" placeholder="Bill..">
+          <div class="row">
+            <div class="col-25">
+              <label for="date">Date</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="date" name="date" placeholder="MM/DD/YYYY?">
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-25">
-            <label for="date">Date</label>
+          <div class="row">
+            <div class="col-25">
+              <label for="time">Amount</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="amount" name="amount" placeholder="Amount?..">
+            </div>
           </div>
-          <div class="col-75">
-            <input type="text" id="date" name="date" placeholder="MM/DD/YYYY?">
+          <div class="row">
+            <div class="col-25">
+              <label for="notes">Additional Info</label>
+            </div>
+            <div class="col-75">
+              <textarea id="notes" name="notes" placeholder="Write something.." style="height:100px"></textarea>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-25">
-            <label for="time">Amount</label>
+          <div class="row">
+            <button class="addButton" id="addNewBill">Add this Bill</button>
+            <button class="cancel" id="cancelAddBill">Cancel</button>
           </div>
-          <div class="col-75">
-            <input type="text" id="amount" name="amount" placeholder="Amount?..">
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-25">
-            <label for="notes">Additional Info</label>
-          </div>
-          <div class="col-75">
-            <textarea id="notes" name="notes" placeholder="Write something.." style="height:100px"></textarea>
-          </div>
-        </div>
-        <div class="row">
-          <button class="addButton" id="addNewBill">Add this Bill</button>
-          <button class="cancel" id="cancelAddBill">Cancel</button>
         </div>
       </div>
-  </div>
-</div>
+    </div>
 
-<!--<button class="addButton" id="addMedsButton">Add New Medication</button>-->
+    <!--<button class="addButton" id="addMedsButton">Add New Medication</button>-->
 
-<script>
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
-    document.body.style.backgroundColor = "#d9d3d3";
-}
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginLeft= "0";
-    document.body.style.backgroundColor = "#d9d3d3";
-}
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
-<script src="script2.js"></script>
+    <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+        document.body.style.backgroundColor = "#d9d3d3";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+        document.body.style.backgroundColor = "#d9d3d3";
+      }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+    <script src="script3.js"></script>
 
 </body>
+
 </html>

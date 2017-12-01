@@ -83,7 +83,7 @@ $('#addNewMed').click(function(){
 function  loadMeds() {
   var medIndex = 0;
 
-  for(i=1; i<=numOfMeds ; i++){
+  for(i=index-numOfMeds+1; i<=index; i++){
     var medData = JSON.parse(localStorage.getItem('med' + i));
     var medDate = medData['date'];
     medIndex = medData['index'];
@@ -132,7 +132,7 @@ function addMeds() {
   numOfMeds++;
   index++;
   localStorage.setItem('numOfMeds', numOfMeds);
-  localStorage.setItem('medIndex', medIndex);
+  localStorage.setItem('medIndex', index);
 
 
 
