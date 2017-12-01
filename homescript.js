@@ -10,6 +10,9 @@ var todaysDate = d.getMonth() + 1 + "/" + d.getDate() + "/" + d.getFullYear();
 var numOfBills = 0;
 var numOfMeds = 0;
 var numOfGrocs = 0;
+var billIndex = 0;
+var medIndex = 0;
+var grocIndex = 0;
 
 
 function loadDashboardData(){
@@ -17,6 +20,7 @@ function loadDashboardData(){
 
   //Bills
   numOfBills = localStorage.getItem('numOfBills');
+  billIndex = localStorage.getItem('billIndex');
   if(numOfBills > 0) {
     $('#noBills').hide();
     for(i=1; i<=numOfBills ; i++){
@@ -49,6 +53,8 @@ function loadDashboardData(){
 
   //MEDICINES
   numOfMeds = localStorage.getItem('numOfTodayMeds');
+  medIndex = localStorage.getItem('medIndex');
+
   console.log("Medicine")
   if(numOfMeds > 0){
     $('#noMeds').hide();
@@ -91,6 +97,8 @@ function loadDashboardData(){
 
   //Groceries
   numOfGrocs = localStorage.getItem('numOfItems');
+  grocIndex = localStorage.getItem('grocIndex'); 
+
   console.log('GROCERIES' + numOfGrocs);
   if(numOfGrocs > 0) {
 

@@ -68,7 +68,7 @@ function deleteThisItem(item_id){
   //var items_id = $("#" + item_id).parent().attr('id');
   //alert("Close clicked on " + med_id);
   //console.log(item_id)
-  $("#" + item_id).remove();
+  $("#" + item_id).parent().parent().remove();
 
   localStorage.removeItem(item_id);
   numOfItems--;
@@ -79,7 +79,7 @@ function deleteBought(bought_id){
   var items_id = $("#" + bought_id).parent().attr('id');
   //alert("Close clicked on " + med_id);
   console.log(items_id);
-  $("#" + items_id).remove();
+  $("#" + items_id).parent().parent().remove();
 
   localStorage.removeItem(items_id);
   console.log(numOfBoughts);

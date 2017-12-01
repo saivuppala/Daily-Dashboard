@@ -296,6 +296,10 @@ i {
    -webkit-transform: rotate(-135deg);
 }
 
+.checkbox {
+  float: left;
+  vertical-align: middle; 
+}
 
 
 

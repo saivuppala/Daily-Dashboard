@@ -148,7 +148,7 @@ label {
 
 <!--  <span style="font-size:28px;font-family: Courier New; cursor:pointer" onclick="openNav()">&#9776; Menu</span>-->
 <div class="groHeader">
-  <span style="font-size:28px;font-family:Roboto Slab;;display:inline;block-size:1px;cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+  <span style="font-size:28px;font-family:Roboto Slab;;display:inline;block-size:1px;cursor:pointer" onclick="openNav()">&#9776;</span>
   <h1 id="SV">Groceries</h1>
 </div>
 
@@ -208,12 +208,17 @@ label {
   </script>
 
   <script id="future-template" type="text/x-handlebars-template">
+    <div id = "boughtdiv{{index}}">
+    <button class="w3-buttonw3-green" id="boughtbutton{{index}}"  border-radius: 10%>
     <div class="itemBox" id = "bought{{index}}">
       <span class="closeItem" id="close{{index}}" onclick = "deleteBought(this.id)">&times;</span>
     <h3 id = "title">{{title}}</h3>
       <p>Amount: {{amount}}</p>
-      <p>Expires on: </p>
+      <!--<p>Expires on: </p>-->
     </div>
+  </button>
+  <br><br>
+</div>
   </script>
 
 <!---
