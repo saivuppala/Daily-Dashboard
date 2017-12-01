@@ -1,4 +1,5 @@
 var numOfMeds = 0;
+var index = 0;
 
 $(document).ready(function() {
   console.log("Local storage length is " + localStorage.length);
@@ -127,6 +128,7 @@ function addMeds() {
 
   //Increase med counter
   numOfMeds++;
+  index++;
   localStorage.setItem('numOfMeds', numOfMeds);
 
 
@@ -137,9 +139,9 @@ function addMeds() {
   var userMedNotes = document.getElementById('notes').value;
 
   var userMedData = {'title': userMedName, 'notes': userMedNotes, 'time': userMedTime,'date': userMedDate,
-                    'freq' : userMedFreq, 'index' : numOfMeds};
+                    'freq' : userMedFreq, 'index' : index};
 
-  localStorage.setItem('med' + numOfMeds, JSON.stringify(userMedData));
+  localStorage.setItem('med' + index, JSON.stringify(userMedData));
   console.log("Local storage length is " + localStorage.length);
 
 //TODAY'S MEDICINES
