@@ -20,13 +20,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>jQuery UI Datepicker - Default functionality</title>
 
-  <!--<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.0/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.0/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
   $( function() {
     $( "#date" ).datepicker();
-  } );-->
+  } );
   </script>
     <style>
 
@@ -214,32 +214,47 @@ label {
   <h1 id="SV">Medications</h1>
 
   <script id="today-template" type="text/x-handlebars-template">
-    <div class="medBox" id = "med{{index}}" onclick = "showNotes(this.id)">
+    <div id = "meddiv{{index}}">
+    <button class="w3-buttonw3-green" id="medbutton{{index}}" onclick = "showNotes(this.id)" border-radius: 10%>
+    <div class="medBox" id = "med{{index}}" >
       <img height= "30px" width= "30px" align ="right" id = "edit{{index}}" onclick = "editItem(this.id)" src="http://www.icon2s.com/wp-content/uploads/2013/07/black-white-metro-edit-icon.png"/>
       <span class="closeItem" id="close{{index}}" onclick = "deleteItem(this.id)">&times;</span>
     <h3 id = "title">{{title}}</h3>
       <p>Instructions: {{notes}}</p>
       <p>Date: {{date}}</p>
       <p>Time: {{time}}</p>
-      <p>Frequency: {{freq}}</p>
+      <p>How often: {{freq}}</p>
 
       <p id=med{{index}}notes>Notes: {{notes}}</p>
 
 
     </div>
+  </button>
+  <br><br>
+</div>
 
   </script>
 
   <script id="future-template" type="text/x-handlebars-template">
+    <div id = "meddiv{{index}}">
+    <button class="w3-buttonw3-green" id="medbutton{{index}}" onclick = "showAllInfo(this.id)" border-radius: 10%>
     <div class="medBox" id = "med{{index}}">
       <span class="closeItem" id="close{{index}}" onclick = "deleteItem(this.id)">&times;</span>
     <h3 id = "title">{{title}}</h3>
       <p>Date: {{date}}</p>
+      <div id="med{{index}}info">
+        <p>Instructions: {{notes}}</p>
+        <p>Time: {{time}}</p>
+        <p>How often: {{freq}}</p>
+      </div>
       <!--<p>Instructions: {{notes}}</p>
       <p>Time: {{time}}</p>-->
 
 
     </div>
+  </button>
+  <br><br>
+</div>
 
   </script>
 

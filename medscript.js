@@ -1,4 +1,5 @@
 var numOfMeds = 0;
+var index = 0;
 
 $(document).ready(function() {
   console.log("Local storage length is " + localStorage.length);
@@ -127,6 +128,7 @@ function addMeds() {
 
   //Increase med counter
   numOfMeds++;
+  index++;
   localStorage.setItem('numOfMeds', numOfMeds);
 
 
@@ -137,9 +139,9 @@ function addMeds() {
   var userMedNotes = document.getElementById('notes').value;
 
   var userMedData = {'title': userMedName, 'notes': userMedNotes, 'time': userMedTime,'date': userMedDate,
-                    'freq' : userMedFreq, 'index' : numOfMeds};
+                    'freq' : userMedFreq, 'index' : index};
 
-  localStorage.setItem('med' + numOfMeds, JSON.stringify(userMedData));
+  localStorage.setItem('med' + index, JSON.stringify(userMedData));
   console.log("Local storage length is " + localStorage.length);
 
 //TODAY'S MEDICINES
@@ -180,8 +182,13 @@ function addMeds() {
 function deleteItem(item_id){
   //alert("Close clicked on " + item_id);
   var med_id = $("#" + item_id).parent().attr('id');
+
+  var div_id = $("#" + item_id).parent().parent().parent().attr('id');
   //alert("Close clicked on " + med_id);
-  $("#" + item_id).parent().remove();
+  //$("#" + item_id).parent().remove();
+  $("#" + div_id).remove();
+  //alert("Close clicked on " + med_id);
+  //$("#" + item_id).parent().remove();
 
   localStorage.removeItem(med_id);
   numOfMeds--;
@@ -195,7 +202,21 @@ function editItem(item_id){
   //NEED TO CHANGE to fill in fields with data
 }
 
-function showNotes(div_id){
+/*function showNotes(div_id){
   //alert("Bill clicked on " + div_id);
   $("#" + div_id + "notes").toggle();
+}*/
+
+function showNotes(btn_id){
+
+  var div_id = $("#" + btn_id).children().attr('id');
+
+  $("#" + div_id + "notes").toggle();
+}
+
+function showAllInfo(btn_id){
+  var div_id = $("#" + btn_id).children().attr('id');
+
+  $("#" + div_id + "info").toggle();
+
 }

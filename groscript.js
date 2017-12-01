@@ -118,9 +118,13 @@ function addMeds() {
 function deleteItem(item_id){
   //alert("Close clicked on " + item_id);
   var items_id = $("#" + item_id).parent().attr('id');
+  var div_id = $("#" + item_id).parent().parent().parent().attr('id');
+  //alert("Close clicked on " + med_id);
+  //$("#" + item_id).parent().remove();
+  $("#" + div_id).remove();
   //alert("Close clicked on " + med_id);
   console.log(items_id);
-  $("#" + items_id).remove();
+  //$("#" + items_id).remove();
 
   localStorage.removeItem(items_id);
   numOfItems--;
@@ -168,7 +172,21 @@ function  loadItems() {
   }
 }
 
-function showNotes(div_id){
-  //alert("Bill clicked on " + div_id);
+// function showNotes(div_id){
+//   //alert("Bill clicked on " + div_id);
+//   $("#" + div_id + "notes").toggle();
+// }
+
+function showNotes(btn_id){
+
+  var div_id = $("#" + btn_id).children().attr('id');
+
   $("#" + div_id + "notes").toggle();
+}
+
+function showAllInfo(btn_id){
+  var div_id = $("#" + btn_id).children().attr('id');
+
+  $("#" + div_id + "info").toggle();
+
 }

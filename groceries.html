@@ -187,6 +187,8 @@ label {
   <h1 id="SV">Groceries</h1>
 
   <script id="today-template" type="text/x-handlebars-template">
+    <div id = "itemdiv{{index}}">
+    <button class="w3-buttonw3-green" id="itembutton{{index}}"  border-radius: 10%>
     <div class="itemBox" id = "item{{index}}">
       <form id=form{{index}} action="/action_page.php" method="get">
         <input id="checkbox{{index}}" class = "checkbox" type="checkbox" onchange="toggleCheckbox(this, this.id)" name="bought" value="Bought"> <br>
@@ -196,6 +198,9 @@ label {
     <h3 id = "title">{{title}}</h3>
       <p>Amount: {{amount}}</p>
     </div>
+  </button>
+  <br><br>
+</div>
   </script>
 
   <script id="future-template" type="text/x-handlebars-template">
