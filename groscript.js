@@ -5,6 +5,8 @@ $(document).ready(function() {
   numOfItems = localStorage.getItem('numOfItems');
   numOfBoughts = localStorage.getItem('numOfBoughts');
   index = localStorage.getItem('grocIndex');
+  $("#noGroc").show();
+  $("#noBought").show();
 
   if(numOfItems > 0 || numOfBoughts > 0) loadItems();
   $("#addBillsButton").click(openPopup);
@@ -45,6 +47,8 @@ function closePopup(){
 
 function toggleCheckbox(element, item_id) {
   if (element.checked) {
+
+    $("#noBought").hide();
     //var this_id = $(item_id).parent().parent().attr('id');
     var this_id = $("#" + item_id).parent().parent().attr('id');
     console.log(item_id + " : " + this_id)
@@ -72,6 +76,8 @@ function deleteThisItem(item_id){
 
   localStorage.removeItem(item_id);
   numOfItems--;
+  if(numOfItems == 0) $("#noGroc").show();
+  if(numOfBoughts == 0)  $("#noBought").show();
   //localStorage.setItem('numOfMeds', numOfMeds);
 }
 
@@ -86,6 +92,8 @@ function deleteBought(bought_id){
   numOfBoughts--;
   console.log(numOfBoughts);
   localStorage.setItem('numOfBoughts', numOfBoughts);
+  if(numOfItems == 0) $("#noGroc").show();
+  if(numOfBoughts == 0)  $("#noBought").show();
 
 }
 
@@ -95,6 +103,7 @@ function addMeds() {
   index++;
   localStorage.setItem('grocIndex', index);
   localStorage.setItem('numOfItems', numOfItems);
+  $("#noGroc").hide();  
 
     var source = $("#today-template").html();
     var template = Handlebars.compile(source);
@@ -131,6 +140,8 @@ function deleteItem(item_id){
   localStorage.removeItem(items_id);
   numOfItems--;
   localStorage.setItem('numOfItems', numOfItems);
+  if(numOfItems == 0) $("#noGroc").show();
+  if(numOfBoughts == 0)  $("#noBought").show();
 }
 
 function editItem(item_id){
@@ -142,6 +153,8 @@ function editItem(item_id){
 
 function  loadItems() {
   numOfItems = localStorage.getItem('numOfItems');
+  if(numOfItems != 0) $("#noGroc").hide();
+
   for(i=index-numOfItems+1; i<=index; i++){
     var itemData = JSON.parse(localStorage.getItem('item' + i));
     var itemDate = itemData['amount'];
@@ -159,6 +172,7 @@ function  loadItems() {
   }
 
   numOfBoughts = localStorage.getItem('numOfBoughts');
+  if(numOfBoughts != 0)  $("#noBought").hide();
   for(i=1;  i <=numOfBoughts; i++){
     var itemData = JSON.parse(localStorage.getItem('bought' + i));
     var itemDate = itemData['amount'];

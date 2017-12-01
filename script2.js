@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  $("#noBills").hide();
   if(localStorage.length > 0) loadBills();
   $("#addBillsButton").click(openPopup);
   $("#cancelAddBill").click(closePopup);
@@ -65,6 +66,7 @@ $('#addNewBill').click(function(){
 function  loadBills() {
   numOfBills = localStorage.getItem('numOfBills');
   index = localStorage.getItem('billIndex');
+  if(numOfBills == 0) $("#noBills").show();
   for(i=index-numOfBills+1; i<=index; i++){
     var medData = JSON.parse(localStorage.getItem('bill' + i));
     var medDate = medData['date'];
@@ -104,6 +106,7 @@ function addBills() {
   index++;
   localStorage.setItem('numOfBills', numOfBills);
   localStorage.setItem('billIndex', index);
+  $("#noBills").hide();
 
 
   //if(numOfBills<3){
@@ -143,6 +146,7 @@ function deleteItem(item_id){
   localStorage.removeItem(med_id);
   numOfBills--;
   localStorage.setItem('numOfBills', numOfBills);
+  if(numOfBills == 0) $("#noBills").show();
 }
 
 function showNotes(btn_id){

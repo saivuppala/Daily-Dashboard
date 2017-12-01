@@ -11,6 +11,8 @@ $(document).ready(function() {
   $("#addMedsButton").click(openPopup);
   $("#cancelAddMed").click(closePopup);
   $("#addNewMed").click(addMeds);
+  $("#noMeds").hide();
+
 })
 var simpleData = {'title': 'Eye drops', 'notes': '2 drops per eye', 'time': '3:00pm', 'index': 1};
 //var dataIndex = 1;
@@ -82,6 +84,9 @@ $('#addNewMed').click(function(){
 //Loads meds from localStorage
 function  loadMeds() {
   var medIndex = 0;
+  if(numOfMeds == 0)  $("#noMeds").show();
+  console.log("Num meds" + numOfMeds);
+
 
   for(i=index-numOfMeds+1; i<=index; i++){
     var medData = JSON.parse(localStorage.getItem('med' + i));
@@ -113,6 +118,7 @@ function  loadMeds() {
         //var box = $("#item1");
 
         currList.append(html);
+        $("#med" + i + "info").hide();
         //list.append(box);
       }
   }
@@ -133,6 +139,7 @@ function addMeds() {
   index++;
   localStorage.setItem('numOfMeds', numOfMeds);
   localStorage.setItem('medIndex', index);
+  $("#noMeds").hide();
 
 
 
@@ -203,6 +210,7 @@ function deleteItem(item_id){
   if(medDate == todaysDate) numOfTodayMeds--;
   localStorage.setItem('numOfMeds', numOfMeds);
   localStorage.setItem('numOfTodayMeds', numOfTodayMeds);
+  if(numOfMeds == 0)  $("#noMeds").show();
 }
 
 function editItem(item_id){
