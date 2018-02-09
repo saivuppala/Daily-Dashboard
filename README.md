@@ -1,2 +1,2 @@
 # DailyDashboard
-https://saivuppala.github.io/Daily_Dashboard-1/
+https://saivuppala.github.io/Daily-Dashboard/
